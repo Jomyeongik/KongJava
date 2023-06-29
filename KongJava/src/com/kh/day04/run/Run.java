@@ -8,6 +8,6 @@ public class Run {
 //	Exercise_DimArray exDimArray = new Exercise_DimArray();
 //	exDimArray.exercise5();
 		Excercise_Exception exException = new Excercise_Exception();
-		exException.practice2();
+		exException.exercise4();
 	}
 }

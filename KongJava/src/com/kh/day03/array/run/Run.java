@@ -14,7 +14,7 @@ public class Run {
 //		exFor.ExcerciseWhile1();
 //		exFor.ExcerciseWhile2();
 //		exArr.arrayCopyExercise();
-		exArr.practice2_3();
+		exArr.lottoExcercise();
 	}
 
 

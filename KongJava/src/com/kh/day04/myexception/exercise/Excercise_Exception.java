@@ -31,18 +31,50 @@ public class Excercise_Exception {
 		// 사용자가 정수가 아닌 문자를 입력할 때 발생하는 InputMismatchException예외를
 		// 처리하여 다시 입력받도록 하여라.
 		Scanner sc = new Scanner(System.in);
-		while(true) {
+		int sum = 0;
+		System.out.println("정수 3개를 입력하세요.");
+		for(int i = 1; i <= 3; i++) {
+				System.out.print(i + " >> ");
 			try {
-				System.out.print("정수 3개 입력 : ");
-				int num1 = sc.nextInt();
-				int num2 = sc.nextInt();
-				int num3 = sc.nextInt();
-				int sum = num1 + num2 + num3;
-				System.out.println("합은 : " + sum);			
+				sum += sc.nextInt();
 			}catch(InputMismatchException e) {
-				System.out.println("정수를 입력해주세요.");
-				sc.next();
+				System.out.println("정수가 아닙니다. 다시 입력해주세요.");
+				sc.next();	// 입력한 문자 제거
+				i--;		// i++를 만나서 증가하도록 하기 위함.
+				continue;	// i++로 가게 해줌
 			}			
 		}
+		System.out.printf("합은 %d입니다.\n", sum);
 	}
+	
+	public void exercise3() {
+		// 범위를 벗어난 배열의 접근
+		int [] intArrs = new int[5];
+		try {
+			System.out.println(intArrs[5]);			
+		} catch (ArrayIndexOutOfBoundsException e) {
+			System.out.println("배열의 인덱스가 범위를 벗어났습니다.");
+		}
+	}
+
+	public void exercise4() {
+		// 정수가 아닌 문자열을 정수로 변환할 때 예외 발생
+		// (NumberFormatException)
+		String [] str = new String[2];
+		str[0] = "1026";
+		str[1] = "5.15";
+		// String -> int
+		try {
+			int result = Integer.parseInt(str[0]);
+			System.out.printf("숫자로 변환된 값은 %d\n", result);
+			int check = Integer.parseInt(str[1]);
+			System.out.printf("숫자로 변환된 값은 %d\n", check);			
+		} catch (NumberFormatException e) {
+			System.out.println("해당 문자열은 정수로 변환할 수 없습니다.");
+		}
+	}
+
+
+
+
 }

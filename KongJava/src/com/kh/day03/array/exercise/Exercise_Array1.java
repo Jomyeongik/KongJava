@@ -173,21 +173,32 @@ public class Exercise_Array1 {
 		// 단, 결과는 오름차순으로 정렬
 		// 로또 번호는 6개. 로또 번호의 범위는 1 ~ 45
 		Random rand = new Random();
-		int lotto[] = new int[6];
-		for(int i = 0; i < 6; i++) {
-			lotto[i] = rand.nextInt(45)+1;
-			for(int j = 0; j < 6; j++) {
-				if(lotto[i] == lotto[j]) {
-					while(lotto[i] != lotto[j]) {
-						lotto[i] = rand.nextInt(45)+1;
-					}
-				}
-			}
-		}
-		Arrays.sort(lotto);
-		for(int i = 0; i < 6; i++) {
-			System.out.print(lotto[i] + " ");
-		}
+	    int lotto[] = new int[6];
+	    int index = 0;
+	    
+	    while (index < 6) {
+	        int number = rand.nextInt(45) + 1;
+	        
+	        // 중복 번호 확인
+	        boolean duplicate = false;
+	        for (int i = 0; i < index; i++) {
+	            if (lotto[i] == number) {
+	                duplicate = true;
+	                break;
+	            }
+	        }
+	        
+	        
+	        if (!duplicate) {
+	            lotto[index] = number;
+	            index++;
+	        }
+	    }
+	    
+	    Arrays.sort(lotto);
+	    for (int i = 0; i < 6; i++) {
+	        System.out.print(lotto[i] + " ");
+	    }
 		
 		
 	}
