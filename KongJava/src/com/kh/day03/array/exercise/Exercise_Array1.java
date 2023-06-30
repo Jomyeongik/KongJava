@@ -354,6 +354,138 @@ public class Exercise_Array1 {
 			System.out.println();
 		}
 	}
+	
+	public void practice2_4() {
+	    // 4번
+	    /*
+	     * 다음과 같은 실행 예제를 구현하세요.
+	     *
+	     * ex. 정수 입력 : 5
+	     *****
+	     *     *
+	     *     *
+	     *     *
+	     *****
+	     */		
+		Scanner sc = new Scanner(System.in);
+		System.out.print("정수 입력 : ");
+		int input = sc.nextInt();
+		
+		for(int i = 1; i <= input; i++) {
+			System.out.print("*");
+		}
+		System.out.println();
+		for(int i = 1; i <= (input-2); i++) {
+			System.out.print("*");
+			for(int j = 1 ; j < input-1; j++) {
+				System.out.print(" ");
+			}
+			System.out.print("*");
+			System.out.println();
+		}
+		
+		for(int i = 1; i <= input; i++) {
+			System.out.print("*");
+		}
+		
+		
+	}
+
+	
+	public void practice2_5() {
+
+	    // 5번
+	    // 사용자로부터 입력 받은 하나의 값이 소수인지 판별하는 프로그램을 구현하세요.
+	    // 단, 입력한 수가 2보다 작은 경우 “잘못 입력하셨습니다.”를 출력하세요.		
+		Scanner sc = new Scanner(System.in);
+		System.out.print("정수 입력 : ");
+		int input = sc.nextInt();
+		int count = 0;
+		if(input < 2) {
+			System.out.println("잘못 입력하셨습니다.");
+		}else {
+			for(int i = 2; i < input; i++) {
+				if(input%i == 0) {
+					count++;
+				}
+			}
+			if(count == 0) {
+				System.out.println("소수입니다.");
+			}else {
+				System.out.println("소수가 아닙니다.");
+			}
+		}
+		
+		
+		
+	}
+
+	public void practice2_6() {
+	    // 6번
+	    // 위 문제와 모든 것이 동일하나, 입력한 수가 2보다 작은 경우
+	    // “잘못 입력하셨습니다.”를 출력하면서 다시 사용자가 값을 입력하도록 하세요.
+		Scanner sc = new Scanner(System.in);
+		while(true) {
+			System.out.print("정수 입력 : ");
+			int input = sc.nextInt();
+			int count = 0;
+			if(input < 2) {
+				System.out.println("잘못 입력하셨습니다.");
+				continue;
+			}else {
+				for(int i = 2; i < input; i++) {
+					if(input%i == 0) {
+						count++;
+					}
+				}
+				if(count == 0) {
+					System.out.println("소수입니다.");
+					break;
+				}else {
+					System.out.println("소수가 아닙니다.");
+					break;
+				}
+			}		
+			
+		}
+		
+	}
+
+	public void practice2_7() {
+	    // 7번
+	    // 2부터 사용자가 입력한 수까지의 소수를 모두 출력하고 소수의 개수를 출력하세요.
+	    // 단, 입력한 수가 2보다 작은 경우 “잘못 입력하셨습니다.”를 출력하세요.
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.print("정수입력 : ");
+		int input = sc.nextInt();
+		// 소수 체크, 소수 카운트, 소수 출력
+		int checkPrimeCount = 0;
+		int PrimeNumberCount = 0;
+		if(input < 2) {
+			System.out.println("잘못 입력하셨습니다.");
+		}else {
+			for(int i = 2; i <= input; i++) {
+				for(int j = 2; j < i; j++) {
+					if(i%j == 0) {						
+						checkPrimeCount ++; //
+						}
+				}
+				if(checkPrimeCount == 0) {
+					System.out.print(i + " ");
+					PrimeNumberCount++;
+				}else {
+					checkPrimeCount = 0;
+				}
+			}
+			System.out.println();
+			System.out.println("소수의 개수는 : " + PrimeNumberCount);
+		}
+	}
+		
+		
+
+	
 	public void UpDownGame() {
 		
 	}
