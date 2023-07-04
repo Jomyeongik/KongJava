@@ -1,0 +1,40 @@
+package com.kh.day07.oop.polymorphism.instnceof;
+
+public class Exam_instanceOf {
+	
+	static void print(Person person) {
+		if(person instanceof Student && person instanceof StudentWorker) {
+			System.out.println("Student입니다!");			
+		}
+		if(person instanceof Researcher) {
+			System.out.println("Researcher입니다!");
+		}
+		if(person instanceof StudentWorker) {
+			System.out.println("StudentWorker입니다!");
+		}
+		// person = new Student();
+		// person = new Researcher();
+		// person = new StudentWorker();
+		// person = new Professor();
+	}
+	
+//	static void print(Researcher researcher) {
+//		System.out.println("Researcher입니다!");
+//	}
+//	static void print(StudentWorker studentWorker) {
+//		System.out.println("StudentWorker입니다!");
+//	}
+//	
+//	static void print(Professor professor) {
+//		System.out.println("Professor입니다.");
+//	}
+//	
+	public static void main(String[] args) {
+
+		print(new Student());
+		print(new Researcher());
+		print(new StudentWorker());
+		print(new Professor());
+	}
+
+}
